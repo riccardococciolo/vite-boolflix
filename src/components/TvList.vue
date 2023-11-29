@@ -1,5 +1,5 @@
 <script>
-import FilmCard from './FilmCard.vue';
+import TvCard from './TvCard.vue';
 import { store } from '../store';
 
 export default {
@@ -8,7 +8,7 @@ export default {
             store,
         }
     },
-    components: { FilmCard }
+    components: { TvCard }
 }
 </script>
 
@@ -19,8 +19,8 @@ export default {
                 <p>La pagina sta caricando...</p>
             </div>
             <div class="row" v-else>
-                <div v-for="(film) in store.films" class="col">
-                    <FilmCard :film="film" />
+                <div v-for="(Tv) in store.Tv" class="col">
+                    <FilmCard :Tv="Tv" />
                 </div>
             </div>
         </div>
