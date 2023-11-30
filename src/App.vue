@@ -1,9 +1,9 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import FilmList from './components/FilmList.vue';
-import TvList from './components/TvList.vue'
 import axios from 'axios';
 import { store } from './store.js';
+import TvList from './components/TvList.vue';
 
 export default {
   components: { AppHeader, FilmList, TvList },
@@ -41,7 +41,7 @@ export default {
           }
         })
         .then((resp) => {
-          this.store.Tv = resp.data.results;
+          this.store.tv = resp.data.results;
         })
         .catch((err) => {
           alert("Il film non é disponibile")
