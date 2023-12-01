@@ -26,6 +26,7 @@ export default {
         })
         .then((resp) => {
           this.store.films = resp.data.results;
+          this.store.films = "movie"
         })
         .catch((err) => {
           alert("Il film non é disponibile")
@@ -43,6 +44,7 @@ export default {
         })
         .then((resp) => {
           this.store.tv = resp.data.results;
+          this.store.tv.type = "tv"
         })
         .catch((err) => {
           alert("Il film non é disponibile")
