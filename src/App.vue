@@ -15,6 +15,7 @@ export default {
   methods: {
     handleSearch() {
       this.store.loading = true;
+      console.log("funziona");
 
       axios
         .get(this.store.apiFilm, {
@@ -49,6 +50,8 @@ export default {
         .finally(() => {
           this.store.loading = false;
         });
+
+        this.store.searchText = "";
     }
   },
 };
@@ -69,5 +72,10 @@ export default {
 
 <style lang="scss">
 @use "./style/general.scss";
+@use "./style/partials/variables" as *;
 @import "@fortawesome/fontawesome-free/css/all.css";
+
+  body {
+    background-color: $bg-color;
+  }
 </style>

@@ -7,6 +7,11 @@ export default {
             store,
         }
     },
+    methods: {
+        test() {
+            console.log("funziona");
+        }
+    },
 };
 </script>
 
@@ -15,10 +20,10 @@ export default {
         <nav class="navbar bg-black">
             <div class="container-fluid">
                 <a class="navbar-brand text-danger fs-5">Boolflix</a>
-                <form class="d-flex" role="text">
-                    <input class="form-control me-2" type="text" placeholder="Cosa vuoi guardare oggi" aria-label=".form-control-lg example" v-model.trim="store.searchText">
+                <div class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Cosa vuoi guardare oggi" aria-label=".form-control-lg example" @keyup.enter="$emit('performSearch')" v-model.trim="store.searchText">
                     <button class="btn btn-outline-success" type="button" @click="$emit('performSearch')">Search</button>
-                </form>
+                </div>
             </div>
         </nav>
     </div>
